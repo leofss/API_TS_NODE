@@ -9,6 +9,8 @@ const app = express();
 import db from "../config/db";
 //Routes
 import router from "./router";
+//Loger
+import Logger from "../config/logger"
 
 //prefixo de URL
 app.use("/api/",router);
@@ -22,5 +24,5 @@ const port = config.get<number>("port");
 app.listen(port, async() =>{
     await db();
 
-    console.log(`App na porta ${port} ok`);
+    Logger.info(`App na porta ${port} ok`);
 })
