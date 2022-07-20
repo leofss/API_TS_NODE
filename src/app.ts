@@ -1,3 +1,6 @@
+//ENV var
+require("dotenv").config();
+
 import express from "express";
 import config from "config";
 
@@ -18,6 +21,6 @@ const port = config.get<number>("port");
 
 app.listen(port, async() =>{
     await db();
-    
+
     console.log(`App na porta ${port} ok`);
 })
