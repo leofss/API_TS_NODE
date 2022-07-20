@@ -6,7 +6,7 @@ import { MovieModel } from "../Models/Movie";
 //Logger
 import Logger from "../../config/logger";
 
-//todas são Async pois vão trabalhar com BD então é necessário esperar ee responder
+//todas são Async pois vão trabalhar com BD então é necessário esperar ele responder
 export async function CreateMovie(req:Request, res:Response) {
     try{
         const data = req.body;
