@@ -3,7 +3,6 @@ require("dotenv").config();
 
 import express from "express";
 import config from "config";
-
 //DB 
 import db from "../config/db";
 //Routes
@@ -13,8 +12,10 @@ import Logger from "../config/logger";
 //Mid (antes das rotas)
 import MorganMid from "./Middleware/MorganMid"
 
+const cors = require('cors')
 const app = express();
 
+app.use(cors())
 //JSON midleware para poder trafegar informações com esse tipo de dado
 app.use(express.json());
 
@@ -24,7 +25,6 @@ app.use("/api/",router);
 
 //app port 
 const port = config.get<number>("port");
-
 app.listen(port, async() =>{
     await db();
 

@@ -5,7 +5,7 @@ import { MovieCreateValidation } from "./Middleware/MovieValidation";
 
 const router = Router();
 
-export default router.get("/test", (req:Request, res:Response) => {
+export default router.get("/test",(req:Request, res:Response) => {
     res.status(200).send("Hello World API");
 }).post("/movie", MovieCreateValidation() ,Validate, CreateMovie)
 .get("/movie/:id", GetMovieById)
